@@ -14,4 +14,9 @@ public class ExecutionTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void helloWorld() {
+        System.out.println("hello, world!");
+    }
 }

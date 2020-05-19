@@ -2,14 +2,14 @@ package com.jaehee.dataprocessing;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
 public class FootStepPressure {
-    ArrayList<ArrayList<Integer>> left;
-    ArrayList<ArrayList<Integer>> right;
-    int cnt;
-    int len_standard;
-    ArrayList<Integer> left_sum;
-    ArrayList<Integer> right_sum;
+    private ArrayList<ArrayList<Integer>> left;
+    private ArrayList<ArrayList<Integer>> right;
+    private int cnt;
+    private int len_standard;
+    private ArrayList<Integer> left_sum;
+    private ArrayList<Integer> right_sum;
+
     public FootStepPressure(){
         cnt=0;
         len_standard=10;
@@ -18,6 +18,7 @@ public class FootStepPressure {
         left_sum=new ArrayList<Integer>();
         right_sum=new ArrayList<Integer>();
     }
+
     public void process(FootData[] d){
         Arrays.sort(d);
         int [][]p;
@@ -63,6 +64,7 @@ public class FootStepPressure {
         tmp_r.clear();
 
     }
+
     private void length_normalize(){
         int start[]={0,1,2,3,4,5,6,7,8,9,10,11};
         int sum[]={0,0,0,0,0,0,0,0,0,0,0,0};
@@ -175,6 +177,7 @@ public class FootStepPressure {
         right.clear();
         return pressure;
     }
+
     public ReturnDataType getResult() {
         length_normalize();
         ReturnDataType T = new ReturnDataType();
@@ -190,5 +193,13 @@ public class FootStepPressure {
             T.sum[1][i]=(int)right_sum.get(i);
         }
         return T;
+    }
+
+    public static class ReturnDataType{
+        private ReturnDataType() {}
+
+        public float [][]pressure;
+        public int cnt;
+        public int [][]sum;
     }
 }

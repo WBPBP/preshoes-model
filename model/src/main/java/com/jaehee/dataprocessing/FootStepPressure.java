@@ -2,19 +2,15 @@ package com.jaehee.dataprocessing;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-class returnDataType{
-    public float [][]pressure;
-    public int cnt;
-    public int [][]sum;
-}
-public class footstepPressure {
+
+public class FootStepPressure {
     ArrayList<ArrayList<Integer>> left;
     ArrayList<ArrayList<Integer>> right;
     int cnt;
     int len_standard;
     ArrayList<Integer> left_sum;
     ArrayList<Integer> right_sum;
-    public footstepPressure(){
+    public FootStepPressure(){
         cnt=0;
         len_standard=10;
         left=new ArrayList<ArrayList<Integer>>();
@@ -22,13 +18,13 @@ public class footstepPressure {
         left_sum=new ArrayList<Integer>();
         right_sum=new ArrayList<Integer>();
     }
-    public void process(footData[] d){
+    public void process(FootData[] d){
         Arrays.sort(d);
         int [][]p;
         ArrayList<Integer> tmp_l=new ArrayList<Integer>();
         ArrayList<Integer> tmp_r=new ArrayList<Integer>();
         boolean l_zero=true, r_zero=true;
-        for(footData i : d){
+        for(FootData i : d){
             p=i.getPressure();
             left_sum.add( p[0][0] + p[0][1] + p[0][2] + p[0][3] + p[0][4] + p[0][5] +
                     p[0][6] + p[0][7] + p[0][8] + p[0][9] + p[0][10] + p[0][11]);
@@ -179,9 +175,9 @@ public class footstepPressure {
         right.clear();
         return pressure;
     }
-    public returnDataType getResult() {
+    public ReturnDataType getResult() {
         length_normalize();
-        returnDataType T = new returnDataType();
+        ReturnDataType T = new ReturnDataType();
         T.cnt = cnt;
         T.pressure = featureExtract();
         T.sum=new int[2][];

@@ -180,10 +180,9 @@ public class FootStepPressure {
 
     private double[][] pressureSumDifference(){
         int len=(int)Math.ceil(left_sum.size()/600.0);
-        double []difference=new double[len+1];
-        double x[]=new double[len+1];
-        difference[0]=0;
-        x[0]=0;
+        double [][]difference=new double[2][len+1];
+        difference[1][0]=0;
+        difference[0][0]=0;
         int sumL=0, sumR=0, index=1, i;
         for(i=0;i<left_sum.size()-600;i+=600){
             sumL=0; sumR=0;
@@ -191,9 +190,9 @@ public class FootStepPressure {
                 sumL+=left_sum.get(j);
                 sumR+=right_sum.get(j);
             }
-            difference[index]=(sumR/600.0)-(sumL/600.0);
-            difference[index]=(difference[index]+180.0)/360.0;
-            x[index]=x[index-1]+30;
+            difference[1][index]=(sumR/600.0)-(sumL/600.0);
+            difference[1][index]=(difference[index]+180.0)/360.0;
+            difference[0][index]=difference[0][index-1]+30;
             index++;
         }
         sumL=0; sumR=0;
@@ -204,12 +203,11 @@ public class FootStepPressure {
             sumR+=right_sum.get(j);
             cnt++;
         }
-        difference[index]=(sumR/600.0)-(sumL/600.0);
-        difference[index]=(difference[index]+180.0)/360.0;
-        x[index]=x[index-1]+((cnt/600.0)*30.0);
+        difference[1][index]=(sumR/600.0)-(sumL/600.0);
+        difference[1][index]=(difference[1][index]+180.0)/360.0;
+        difference[0][index]=difference[0][index-1]+((cnt/600.0)*30.0);
 
-        double[][] pressure_diff={x, difference};
-        return pressure_diff;
+        return difference;
     }
 
     public ReturnDataType getResult() {

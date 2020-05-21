@@ -191,7 +191,7 @@ public class FootStepPressure {
                 sumR+=right_sum.get(j);
             }
             difference[1][index]=(sumR/600.0)-(sumL/600.0);
-            difference[1][index]=(difference[index]+180.0)/360.0;
+            difference[1][index]=(difference[1][index]+180.0)/360.0;
             difference[0][index]=difference[0][index-1]+30;
             index++;
         }

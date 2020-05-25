@@ -36,6 +36,6 @@
 
 다음 필드를 포함합니다:
 
-- `double [][]pressure`: TODO
-- `int cnt`: TODO
-- `double [][]sum`: TODO
+- `double [][]pressure`: 양쪽 발의 한 걸음을 센서별로 10단계씩 나눈 값 
+- `int cnt`: 걸음 수
+- `double [][]sum`: 데이터 길이에 맞게 0초부터 30초씩 증가하는 시간과 30초씩 동안의 두 발의 압력 차 평균 값

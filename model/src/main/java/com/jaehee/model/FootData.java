@@ -6,6 +6,7 @@ public class FootData implements Comparable<FootData>{
     private int[] r_pressure;
 
     public FootData(){}
+
     public FootData(int num, int[]l_pressure, int[] r_pressure){
         this.num = num;
         this.l_pressure = l_pressure.clone();

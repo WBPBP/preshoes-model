@@ -39,7 +39,7 @@ public class ExampleUnitTest {
         StaticPressureProcessor model = new StaticPressureProcessor();
         model.process(d);
         double[] res = model.getResult();
-        System.out.println("res, disease");
+        System.out.println("1, 2, 3, disease");
         for(double i : res){
             System.out.print(i + " ");
         }

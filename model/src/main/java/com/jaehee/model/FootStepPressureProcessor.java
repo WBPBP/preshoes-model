@@ -3,6 +3,10 @@ package com.jaehee.model;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * 걷기 검사 후의 값을 입력받아 데이터 가공을 진행하는 클래스입니다.
+ *
+ */
 public class FootStepPressureProcessor {
     private ArrayList<ArrayList<Integer>> left;
     private ArrayList<ArrayList<Integer>> right;

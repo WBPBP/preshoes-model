@@ -16,9 +16,11 @@
 
 정적인 상태에서 발에 가해지는 압력을 분석하는 객체입니다.
 
+해당 클래스에서는 센서는 총 4개의 그룹으로 만들어 사용합니다.
+
 다음 메소드를 제공합니다:
 
-- `public  void process(FootData[]d)`: 샘플을 제공받아 **두 발의 압력 차**를 계산하여 내부 필드에 저장합니다.
+- `public  void process(FootData[]d)`: 샘플을 제공받아 두 발의 압력 차 및 각 발의 앞/뒤꿈치 압력 차를 계산하여 내부 필드에 저장합니다.
 - `public double[] getResult()`: 위 메소드의 결과를 가져옵니다.
 
 ### FootStepPressureProcessor

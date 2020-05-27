@@ -76,20 +76,20 @@ public class ExampleUnitTest {
         FootStepPressureProcessor model = new FootStepPressureProcessor();
         model.process(d);
         FootStepPressureProcessor.ReturnDataType res = model.getResult();
-        System.out.println("Pressure[left, right] : ");
-        for(double[] i : res.pressure){
-            for(double j : i){
-                System.out.print(j + " ");
-            }
-            System.out.println();
+        System.out.println("leftPressure : ");
+        for(double i : res.leftPressure){
+                System.out.print(i + " ");
         }
-        System.out.println("step : "+res.cnt);
-        System.out.println("sum[x, y] : ");
-        for(double []i : res.sum){
-            for (double j : i){
-                System.out.print(j + " ");
-            }
-            System.out.println();
+        System.out.println();
+        System.out.println("rightPressure : ");
+        for(double i : res.rightPressure){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        System.out.println("걸음 수 : "+res.step);
+        System.out.println("두 발 무게중심 편향 : ");
+        for(double i : res.feetWeightBias){
+                System.out.print(i + " ");
         }
     }
 }

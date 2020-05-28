@@ -16,15 +16,17 @@
 
 정적인 상태에서 발에 가해지는 압력을 분석하는 객체입니다.
 
-해당 클래스에서는 양 발의 센서를 총 4개의 그룹으로 만들어 사용합니다. 각 그룹은 part1, part2, part3, part4 라고 칭하겠습니다.
-각 파트는 다음과 같이 나누었습니다.
+ 해당 클래스에서는 양 발의 센서를 총 4개의 그룹으로 만들어 사용합니다. 각 그룹은 part1, part2, part3, part4 라고 칭하겠습니다.
+ 각 파트는 다음과 같이 나누었습니다.
 
-![feet_part](https://user-images.githubusercontent.com/51154225/83109844-118f5e80-a0fd-11ea-8220-583452b3c40b.png)
+![feet_part](https://user-images.githubusercontent.com/51154225/83109844-118f5e80-a0fd-11ea-8220-583452b3c40b.png){: width="200" height="200"}
 
-part1 : index 0번 센서를 포함하고 있습니다.
-part2 : index 1, 2, 3, 4번 센서를 포함하고 있습니다.
-part3 : index 5, 6, 7번 센서를 포함하고 있습니다.
-part4 : index 8, 9, 10, 11번 센서를 포함하고 있습니다.
+출처 : https://www.triadfoot.com/wp-content/uploads/2012/05/iStock_000014250049Medium.jpg
+
+- part1 : index 0번 센서를 포함하고 있습니다.
+- part2 : index 1, 2, 3, 4번 센서를 포함하고 있습니다.
+- part3 : index 5, 6, 7번 센서를 포함하고 있습니다.
+- part4 : index 8, 9, 10, 11번 센서를 포함하고 있습니다.
 
 다음 메소드를 제공합니다:
 

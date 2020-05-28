@@ -16,12 +16,20 @@
 
 정적인 상태에서 발에 가해지는 압력을 분석하는 객체입니다.
 
-해당 클래스에서는 센서는 총 4개의 그룹으로 만들어 사용합니다.
+해당 클래스에서는 양 발의 센서를 총 4개의 그룹으로 만들어 사용합니다. 각 그룹은 part1, part2, part3, part4 라고 칭하겠습니다.
+각 파트는 다음과 같이 나누었습니다.
+
+![feet_part](https://user-images.githubusercontent.com/51154225/83109844-118f5e80-a0fd-11ea-8220-583452b3c40b.png)
+
+part1 : index 0번 센서를 포함하고 있습니다.
+part2 : index 1, 2, 3, 4번 센서를 포함하고 있습니다.
+part3 : index 5, 6, 7번 센서를 포함하고 있습니다.
+part4 : index 8, 9, 10, 11번 센서를 포함하고 있습니다.
 
 다음 메소드를 제공합니다:
 
-- `public  void process(FootData[]d)`: 샘플을 제공받아 두 발의 압력 차 및 각 발의 앞/뒤꿈치 압력 차를 계산하여 내부 필드에 저장합니다.
-- `public double[] getResult()`: 위 메소드의 결과를 가져옵니다.
+- `public  void process(FootData[]d)`: 샘플을 제공받아 양 발의 모든 센서값을 파트별로 합하여 저장합니다.
+- `public double[] getResult()`: 양 발의 앞/뒤 무게중심 편향, 양 발의 무게중심 편향, 질병예측에 사용될 양 발의 part4 압력 차를 가져옵니다.
 
 ### FootStepPressureProcessor
 
@@ -29,7 +37,7 @@
 
 다음 메소드를 제공합니다:
 
-- `public void process(FootData[] d)`: 샘플을 걸음 단위로 나누어 분석한 후 결과를 내부 필드에 저장합니다.
+- `public void process(FootData[] d)`: 샘플을 걸음 단위로 나누어 결과를 분석한 후 내부 필드에 저장합니다.
 - `public ReturnDataType getResult()`: 위 메소드의 결과를 가져옵니다. `FootStepPressureProcessor.ReturnDataType` 참조.
 
 ### FootStepPressureProcessor.ReturnDataType
@@ -38,6 +46,7 @@
 
 다음 필드를 포함합니다:
 
-- `double [][]pressure`: 양쪽 발의 한 걸음을 센서별로 10단계씩 나눈 값 
-- `int cnt`: 걸음 수
-- `double [][]sum`: 데이터 길이에 맞게 0초부터 30초씩 증가하는 시간과 30초씩 동안의 두 발의 압력 차 평균 값
+- `double []leftPressure`: 왼발의 한 걸음을 센서별로 10단계씩 나눈 값 
+- `double []rightPressure` : 오른발의 한 걸음을 센서별로 10단계로 나눈 값
+- `int step`: 걸음 수
+- `double []feetWeightBias`: 샘플 10개마다 두 발의 무게중심 편향 값(0(왼)~1(오))

@@ -19,7 +19,7 @@
  해당 클래스에서는 양 발의 센서를 총 4개의 그룹으로 만들어 사용합니다. 각 그룹은 part1, part2, part3, part4 라고 칭하겠습니다.
  각 파트는 다음과 같이 나누었습니다.
 
-<img src="https://user-images.githubusercontent.com/51154225/83109844-118f5e80-a0fd-11ea-8220-583452b3c40b.png" width="30%" height="30%">
+<img src="https://user-images.githubusercontent.com/51154225/83109844-118f5e80-a0fd-11ea-8220-583452b3c40b.png" width="30%">
 
 출처 : https://www.triadfoot.com/wp-content/uploads/2012/05/iStock_000014250049Medium.jpg
 

@@ -51,5 +51,4 @@
 - `double []leftPressure`: 왼발의 한 걸음을 센서별로 10단계씩 나눈 값 
 - `double []rightPressure` : 오른발의 한 걸음을 센서별로 10단계로 나눈 값
 - `int step`: 걸음 수
-- `double []sequentialPressure` : 걷는 동안의 양 발의 무게중심 변화 (0(왼)~1(오))
 - `double []feetWeightBias`: 양 발의 무게중심 편향 (0(왼)~1(오), 총 10개의 값)

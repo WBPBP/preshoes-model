@@ -49,7 +49,7 @@ public class ExampleUnitTest {
     public void footstepPressureProcessorTest(){
         //random data produce
         Random random = new Random();
-        FootData []d = new FootData[2000];
+        FootData []d = new FootData[6000];
         int[] zero = new int[60];
         for(int i = 0; i<zero.length; i++)
             zero[i] = random.nextInt(2000);
@@ -87,7 +87,12 @@ public class ExampleUnitTest {
         }
         System.out.println();
         System.out.println("걸음 수 : "+res.step);
-        System.out.println("두 발 무게중심 편향 : ");
+        System.out.println("두 발 무게중심 변화 : " + res.sequentialPressure.length);
+        for(double i : res.sequentialPressure){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        System.out.println("두 발 무게중심 편향 : " + res.feetWeightBias.length);
         for(double i : res.feetWeightBias){
                 System.out.print(i + " ");
         }

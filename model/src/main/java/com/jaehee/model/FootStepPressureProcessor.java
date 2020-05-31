@@ -188,13 +188,11 @@ public class FootStepPressureProcessor {
         return feetPressure;
     }
 
-    /**
-     * 양 발 압력 변화 계산
-     * @return weight : 양 발 압력 변화 배열
-     */
+    /*
     private double[] calculateDifferencePressures(){
         int standard = (leftPressureSum.size() < rightPressureSum.size() ? leftPressureSum.size() : rightPressureSum.size()) / step;
         int len = (int)Math.ceil(leftPressureSum.size()/(double)standard);
+        System.out.println(len);
         double []weight = new double[len];
         int sumL = 0, sumR = 0, index = 0, i;
         for(i = 0; i < leftPressureSum.size()-standard; i += standard){
@@ -218,6 +216,7 @@ public class FootStepPressureProcessor {
         weight[index] = (weight[index] + 180.0)/360.0;
         return weight;
     }
+    */
 
     /**
      * 양 발의 무게중심 편향 계산
@@ -251,7 +250,6 @@ public class FootStepPressureProcessor {
         double[][] feetPressure = featureExtract();
         T.leftPressure = feetPressure[0];
         T.rightPressure = feetPressure[1];
-        T.sequentialPressure = calculateDifferencePressures();
         T.feetWeightBias = getHorizontalWeightVariationDuringWalkSession();
         return T;
     }
@@ -261,7 +259,6 @@ public class FootStepPressureProcessor {
      * leftPressure : 왼발의 압력값 변화
      * rightPressure : 오른발의 압력값 변화
      * step : 걸음수
-     * sequentialPressure : 걷는 동안의 양 발의 무게중심 변화
      * feetWeightBias : 양 발의 무게중심 편향(10개)
      */
     public static class ReturnDataType{
@@ -270,7 +267,6 @@ public class FootStepPressureProcessor {
         public double []leftPressure;
         public double []rightPressure;
         public int step;
-        public double []sequentialPressure;
         public double []feetWeightBias;
     }
 }

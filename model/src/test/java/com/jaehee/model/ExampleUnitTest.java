@@ -87,11 +87,6 @@ public class ExampleUnitTest {
         }
         System.out.println();
         System.out.println("걸음 수 : "+res.step);
-        System.out.println("두 발 무게중심 변화 : " + res.sequentialPressure.length);
-        for(double i : res.sequentialPressure){
-            System.out.print(i + " ");
-        }
-        System.out.println();
         System.out.println("두 발 무게중심 편향 : " + res.feetWeightBias.length);
         for(double i : res.feetWeightBias){
                 System.out.print(i + " ");

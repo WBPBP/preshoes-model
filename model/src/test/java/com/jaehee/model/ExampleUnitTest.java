@@ -49,10 +49,10 @@ public class ExampleUnitTest {
     public void footstepPressureProcessorTest(){
         //random data produce
         Random random = new Random();
-        FootData []d = new FootData[6000];
-        int[] zero = new int[60];
+        FootData []d = new FootData[34429];
+        int[] zero = new int[100];
         for(int i = 0; i<zero.length; i++)
-            zero[i] = random.nextInt(2000);
+            zero[i] = random.nextInt(34429);
         Arrays.sort(zero);
         int z = 0;
         int []l_pressure = new int[12];

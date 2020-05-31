@@ -227,7 +227,7 @@ public class FootStepPressureProcessor {
         int standard = len / 10;
         int sumL = 0, sumR = 0, index = 0;
         double[] weightBias = new double[10];
-        for(int i = 0; i < len-standard; i += standard ){
+        for(int i = 0; i <= len-standard; i += standard ){
             sumL = 0; sumR = 0;
             for(int j = i; j < i+standard; j++){
                 sumL += leftPressureSum.get(j);
